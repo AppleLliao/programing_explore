@@ -4,7 +4,7 @@ public class SparseArray {
 
 
     public static void main(String args[]){
-        //创建一个原始的二位数组
+        //创建一个原始的二维数组
         //0：表示没有棋子，1表示 黑子 2 蓝子
         int chessArr1[][] = new int[11][11];
         chessArr1[1][2]=1;
