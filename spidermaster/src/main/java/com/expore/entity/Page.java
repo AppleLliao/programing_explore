@@ -1,4 +1,4 @@
-package main.java.com.expore.entity;
+package com.expore.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +34,41 @@ public class Page {
         urlList.add(url);
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
+    public void setAllNumber(String allNumber) {
+        this.allNumber = allNumber;
+    }
+
+    public void setCommentNumber(String commentNumber) {
+        this.commentNumber = commentNumber;
+    }
+
+    public void setAgainstNumber(String againstNumber) {
+        this.againstNumber = againstNumber;
+    }
+
+    public void setTvName(String tvName) {
+        this.tvName = tvName;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setEpisodeNumber(String episodeNumber) {
+        this.episodeNumber = episodeNumber;
+    }
+
+    public void setUrlList(List<String> urlList) {
+        this.urlList = urlList;
+    }
 
     @Override
     public String toString() {

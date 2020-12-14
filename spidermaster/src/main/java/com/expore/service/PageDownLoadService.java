@@ -1,6 +1,6 @@
-package main.java.com.expore.service;
+package com.expore.service;
 
-import main.java.com.expore.entity.Page;
+import com.expore.entity.Page;
 
 import java.io.IOException;
 
