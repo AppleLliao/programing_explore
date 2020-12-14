@@ -1,4 +1,4 @@
-package main.java.com.expore.util;
+package com.expore.util;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
