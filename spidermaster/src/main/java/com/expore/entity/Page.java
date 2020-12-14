@@ -8,6 +8,7 @@ import java.util.List;
  @author xinrongliao
  @date 20201213
  */
+//@Data
 public class Page {
 
     //页面内容
@@ -34,10 +35,19 @@ public class Page {
         urlList.add(url);
     }
 
+    public String getUrl(){
+        return this.url;
+    }
+    public List<String> getUrlList(){
+        return this.urlList;
+    }
     public void setContent(String content) {
         this.content = content;
     }
 
+    public String getContent(){
+        return this.content;
+    }
     public void setScore(String score) {
         this.score = score;
     }
