@@ -50,7 +50,7 @@ public class ReentranLock0203 {
 
         boolean locked=false;
         try {
-            locked=lock.tryLock(5,TimeUnit.SECONDS); //5秒之后还没得到锁就不等了，返回false
+            locked=lock.tryLock(1,TimeUnit.SECONDS); //5秒之后还没得到锁就不等了，返回false
             System.out.println("m2...."+locked);
         } catch (InterruptedException e) {
             e.printStackTrace();
