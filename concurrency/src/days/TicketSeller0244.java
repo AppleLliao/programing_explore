@@ -1,0 +1,39 @@
+package days;
+
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+/**
+ * 有n张火车票，每张票都有一个编号
+ * 同时有10个窗口对外售票
+ * 请写一个模拟程序
+ *
+ * 分析下面的程序可能会产生哪些问题？
+ * 重复销售？超量销售？
+ *
+ */
+public class TicketSeller0244 {
+    //使用ConcurrentLinkedQueue,非阻塞的并发加锁队列
+    static Queue<String> tickets=new ConcurrentLinkedQueue<>();
+
+    static{
+        for(int i=0;i<1000;i++){
+            tickets.add("票编号："+i);
+        }
+    }
+
+    public static void main(String args[]){
+        for(int i=0;i<10;i++){
+            new Thread(()->{
+                while(true){
+                    String s=tickets.poll(); //原子操作
+                    if(s==null){
+                        break;
+                    }else{
+                        System.out.println(Thread.currentThread().getName()+"销售了--"+s);
+                    }
+                }
+            },"窗口"+i).start();
+        }
+    }
+}
