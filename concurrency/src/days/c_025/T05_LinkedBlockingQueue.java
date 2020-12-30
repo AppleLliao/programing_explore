@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-//无界阻塞队列
+//无界阻塞队列 https://www.iteye.com/blog/wsmajunfeng-1629354
 public class T05_LinkedBlockingQueue {
     static BlockingQueue<String> strs=new LinkedBlockingQueue<>();
 
