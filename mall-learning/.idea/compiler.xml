@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-demo" />
+        <module name="mall-mbg" />
+        <module name="mall-portal" />
+        <module name="mall-security" />
+      </profile>
+      <profile name="Annotation profile for mall-admin" enabled="true">
+        <sourceOutputDir name="../mall-search/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mall-search/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-admin" />
+      </profile>
+      <profile name="Annotation profile for mall-search" enabled="true">
+        <sourceOutputDir name="../mall-portal/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mall-portal/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-search" />
+      </profile>
+      <profile name="Annotation profile for explore" enabled="true">
+        <sourceOutputDir name="../mall-demo/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mall-demo/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mall-common" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
