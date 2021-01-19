@@ -2,8 +2,10 @@ package com.explore.mall.component;
 
 import cn.hutool.json.JSONUtil;
 import com.explore.mall.api.CommonPage;
+import com.explore.mall.api.CommonResult;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +15,12 @@ import java.io.IOException;
 /**
  * 自定义返回结果：未登录或登录过期
  */
+/**
+ * 当未登录或者token失效访问接口时，自定义的返回结果
+ * Created by macro on 2018/5/14.
+ */
+
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
-
-    public void commence(HttpServletRequest request,HttpServletResponse response){
-
-    }
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {

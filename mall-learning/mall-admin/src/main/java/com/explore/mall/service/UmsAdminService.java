@@ -2,6 +2,11 @@ package com.explore.mall.service;
 
 import com.explore.mall.dto.UmsAdminParam;
 import com.explore.mall.model.UmsAdmin;
+import com.explore.mall.model.UmsPermission;
+import com.explore.mall.model.UmsResource;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.List;
 
 public interface UmsAdminService {
     /**
@@ -25,7 +30,19 @@ public interface UmsAdminService {
     /**
      * 获取用户所有权限（包括角色权限和+-权限）
      */
-   // List<UmsPermission> getPermissionList(Long adminId);
+   List<UmsPermission> getPermissionList(Long adminId);
 
+    /**
+     * 获取用户对于角色
+     */
+    //List<UmsRole> getRoleList(Long adminId);
 
+    /**
+     * 获取指定用户的可访问资源
+     */
+    List<UmsResource> getResourceList(Long adminId);
+    /**
+     * 获取用户信息
+     */
+    UserDetails loadUserByUsername(String username);
 }
