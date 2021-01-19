@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.explore.mall.mapper.UmsAdminRoleRelationMapper">
+  <!--批量新增回写主键支持-->
+  <insert id="insertList">
+    INSERT INTO ums_admin_role_relation (admin_id, role_id) VALUES
+    <foreach collection="list" separator="," item="item" index="index">
+      (#{item.adminId,jdbcType=BIGINT},
+      #{item.roleId,jdbcType=BIGINT})
+    </foreach>
+  </insert>
+
+  <select id="getResourceList" resultType="com.explore.mall.model.UmsResource">
+        SELECT
+            ur.id id,
+            ur.create_time createTime,
+            ur.`name` `name`,
+            ur.url url,
+            ur.description description,
+            ur.category_id categoryId
+        FROM
+             ums_resource ur
+    </select>
+
+    <select id="getResource" resultType="com.explore.mall.model.UmsResource">
+        SELECT
+            ur.id id,
+            ur.create_time createTime,
+            ur.`name` `name`,
+            ur.url url,
+            ur.description description,
+            ur.category_id categoryId
+        FROM
+             ums_resource ur limit 1
+    </select>
+  <select id="getAdminIdList" resultType="java.lang.Long">
+        SELECT
+            DISTINCT ar.admin_id
+        FROM
+            ums_role_resource_relation rr
+                LEFT JOIN ums_admin_role_relation ar ON rr.role_id = ar.role_id
+        WHERE rr.resource_id=#{resourceId}
+    </select>
+</mapper>
