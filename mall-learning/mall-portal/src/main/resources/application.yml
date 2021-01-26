@@ -32,4 +32,7 @@ redis:
     expire:
       authCode: 120 # \u9A8C\u8BC1\u7801\u8D85\u671F\u65F6\u95F4
 
-
+mongodb:
+  host: localhost # mongodb的连接地址
+  port: 27017 # mongodb的连接端口号
+  database: mall-port # mongodb的连接的数据库
