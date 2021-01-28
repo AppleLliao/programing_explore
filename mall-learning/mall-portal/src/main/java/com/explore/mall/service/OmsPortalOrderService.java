@@ -1,5 +1,6 @@
 package com.explore.mall.service;
 
+import com.explore.mall.api.CommonResult;
 import com.explore.mall.domain.OrderParam;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,11 @@ import java.util.Map;
  * create by liaoxinrong 2021/1/19
  */
 public interface OmsPortalOrderService {
+    /**
+     * 取消单个超时订单
+     */
+    @Transactional
+    void cancelOrder(Long orderId);
 
     /**
      * 自动取消超时订单
@@ -22,5 +28,5 @@ public interface OmsPortalOrderService {
      * 根据提交信息生成订单
      */
     @Transactional
-    Map<String,Object> generateOrder(OrderParam orderParam);
+    CommonResult generateOrder(OrderParam orderParam);
 }
